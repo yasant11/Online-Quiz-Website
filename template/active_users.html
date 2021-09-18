@@ -1,0 +1,46 @@
+<! doctype html>
+<html>
+<title>
+	QUIZ
+</title>
+<link rel="stylesheet" href="../static/stylesheets/admin.css">	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="profile-nav">
+	<div class="user round">
+		<a href="#">
+		<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+		</a>
+		<h1>{{admin_user}}</h1>
+		<p>{{admin_name}}</p>
+	</div>
+
+	<ul class="sidenav">
+		<li><a href="/admin"> <i class="fa fa-user"></i> Dashboard</a></li>
+		<li><a href="/active_users" class="active"> <i class="fa fa-trash"></i> Remove QUIZ </a></li>
+		<!-- <li><a href="users.html"> <i class="fa fa-calendar"></i> User Details </a></li> -->
+		<li><a href="/upload"> <i class="fa fa-upload"></i> Upload Quiz </a></li>
+		<li><a href="/logout"> <i class="fa fa-edit"></i> Log out</a></li>
+	</ul>
+</div>		
+				
+<div class="right">
+	<div class="heading">
+		REMOVE QUIZ
+	</div>
+	<div class="content">
+	<form method ="POST" action="">
+		{%for quiz in quizzes%}		
+		<div class="quiz_list">
+			{{quiz[0]}}
+			<button type="submit" name="submit" value="{{quiz[0]}}" class="btn">Remove Quiz</button>
+		</div>
+		{%endfor%}	           
+	</form>
+	</div>
+</div>
+
+</body>
+</html>

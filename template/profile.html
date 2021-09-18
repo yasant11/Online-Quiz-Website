@@ -1,0 +1,53 @@
+<! doctype html>
+<html>
+
+<head>
+<title>
+	QUIZ
+</title>
+<link rel="stylesheet" href="../static/stylesheets/prof.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="profile-nav">
+	<div class="user round">
+		<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+		<h1>{{user[0][2]}}</h1>
+		<p>{{user[0][0]}}  {{user[0][1]}}</p>
+	</div>
+	<ul class="sidenav">
+		<li><a href="/profile" class="active"> <i class="fa fa-user"></i> Profile</a></li>
+		<li><a href="/history"> <i class="fa fa-calendar"></i> Recent Quiz </a></li>
+		<li><a href="/quizzes"> <i class="fa fa-laptop"></i> Quiz </a></li>
+		<!-- <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li> -->
+		<li><a href="/logout"> <i class="fa fa-edit"></i> Log out</a></li>
+	</ul>
+</div>
+
+<div class="right">
+	<div class="heading">
+		{{user[0][4]}}
+	</div>
+	<div class="bio-row">
+		<p><span>First Name </span>: {{user[0][0]}}</p>
+	</div>
+	<div class="bio-row">
+		<p><span>Last Name </span>: {{user[0][1]}}</p>
+	</div>
+	<div class="bio-row">
+		<p><span>Country </span>: {{user[0][5]}}</p>
+	</div>
+	<div class="bio-row">
+		<p><span>Birthday</span>: {{user[0][3]}}</p>
+	</div>
+	<div class="bio-row">
+		<p><span>Occupation </span>: {{user[0][6]}}</p>
+	</div>
+	<div class="bio-row">
+		<p><span>Username </span>: {{user[0][2]}}</p>
+	</div>
+</div>
+
+</body>
+</html>

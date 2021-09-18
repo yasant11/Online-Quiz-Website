@@ -1,0 +1,72 @@
+<html>
+<head>
+<!-- <script> -->
+<!-- // Set the date we're counting down to -->
+<!-- var countDownDate = new Date("{{close_time}}").getTime(); -->
+
+<!-- // Update the count down every 1 second -->
+<!-- var x = setInterval(function() { -->
+
+  <!-- // Get today's date and time -->
+  <!-- var now = new Date().getTime(); -->
+    
+  <!-- // Find the distance between now and the count down date -->
+  <!-- var distance = countDownDate-now ; -->
+    
+  <!-- // Time calculations for days, hours, minutes and seconds -->
+  <!-- var days = Math.floor(distance / (1000 * 60 * 60 * 24)); -->
+  <!-- var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); -->
+  <!-- var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); -->
+  <!-- var seconds = Math.floor((distance % (1000 * 60)) / 1000); -->
+    
+  <!-- // Output the result in an element with id="demo" -->
+  <!-- document.getElementById("demo").innerHTML = days + "d " + hours + "h " -->
+  <!-- + minutes + "m " + seconds + "s "; -->
+    
+  <!-- // If the count down is over, write some text  -->
+  <!-- if (distance <0) { -->
+    <!-- clearInterval(x); -->
+    <!-- document.getElementById("submit").click(); -->
+  <!-- } -->
+<!-- }, 1000); -->
+<!-- </script> -->
+<link rel="stylesheet" href="../static/stylesheets/quiz.css">
+<title>
+	Exam
+</title>
+</head>
+<body>
+
+<div class="header">
+	{{user[0][2]}}<br>
+	{{user[0][0]}} {{user[0][1]}}<br>
+	Test : {{question[6]}}<br><br>
+</div>
+
+<div class="content">
+	<div class="question">
+		<form name="question_detail" method ="POST" action="" id="qd">
+			QUESTION {{x}} : {{question[0]}}<br><br>
+			{{question[1]}} : <input type="radio" name="{{question[0]}}" {{status[x-1][2]}} value="1" size="30" /><br><br>
+			{{question[2]}} : <input type="radio" name="{{question[0]}}" {{status[x-1][3]}} value="2" size="30" /><br><br>
+			{{question[3]}} : <input type="radio" name="{{question[0]}}" {{status[x-1][4]}} value="3" size="30" /><br><br>
+			{{question[4]}} : <input type="radio" name="{{question[0]}}" {{status[x-1][5]}} value="4" size="30" /><br><br><br><br>
+			<button type="submit" name="qno" value="-2" class="btn">reset</button>
+			<button type="submit" name="qno" value="{{x}}" class="btn">Next</button>
+			<button type="submit" name="qno" value="-1" class="btn">save</button> 
+		</form>
+	</div>
+	<div class="nav">
+		{% for i in range (0,status|length) %}
+		<button class="{{status[i][6]}}" type="submit" name="qno" form="qd" value="{{i}}">{{i+1}}</button>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="footer">
+	<p id="demo"></p><br>
+	<a href="/submission" id="submit">Submit</a><br>
+</div>
+
+</body>
+</html>

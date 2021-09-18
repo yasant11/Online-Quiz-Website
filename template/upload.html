@@ -1,0 +1,65 @@
+<! doctype html>
+<html>
+<head>
+<script>
+function validateForm() 
+{
+  var q = document.forms["quiz_detail"]["test"].value;
+  var a = document.forms["quiz_detail"]["file"].value;
+  if (q==""||a=="") 
+  {
+    alert("ALL FIELD must be filled out");
+    return false;
+  }
+} 
+</script>
+<link rel="stylesheet" href="../static/stylesheets/admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>
+	QUIZ
+</title>
+</head>
+<body>
+
+{% with messages = get_flashed_messages() %}  
+    {% if messages %}  
+        {% for message in messages %}  
+            <script type ="text/javascript">
+             alert('{{ message }}');
+			</script> 
+        {% endfor %}  
+    {% endif %}  
+{% endwith %}
+
+<div class="profile-nav">
+	<div class="user round">
+		<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+		<h1>{{admin_user}}</h1>
+		<p>{{admin_name}}</p>
+	</div>
+
+	<ul class="sidenav">
+		<li><a href="/admin"> <i class="fa fa-user"></i> Dashboard</a></li>
+		<li><a href="/active_users"> <i class="fa fa-trash"></i> Remove QUIZ </a></li>
+		<!-- <li><a href="users.html"> <i class="fa fa-calendar"></i> User Details </a></li> -->
+		<li><a href="/upload" class="active"> <i class="fa fa-upload"></i> Upload Quiz </a></li>
+		<li><a href="/logout"> <i class="fa fa-edit"></i> Log out</a></li>
+	</ul>
+</div>
+
+<div class="right">
+	<div class="heading">
+		Upload Quiz
+	</div>
+	<div class="content">
+	<form name="quiz_detail" method ="POST" action="/upload" enctype="multipart/form-data" onsubmit="return validateForm()">
+
+		<p><span>Quiz Name :</span> <input type="text" name="test" size="30" value=""/></p>
+		<p><span>File :</span> <input type="file" name="file" size="30" value=""/></p>
+		<button type="submit" name="submit">Add Quiz</button> <button type="reset" name="reset now">Reset</button>
+	</form>
+	</div>
+</div>
+
+</body>
+</html>

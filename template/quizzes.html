@@ -1,0 +1,43 @@
+<! doctype html>
+<html>
+<head>
+<title>
+	QUIZ
+</title>
+<link rel="stylesheet" href="../static/stylesheets/prof.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="profile-nav">
+	<div class="user round">
+		<a href="#">
+		<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+		</a>
+		<h1>{{user[0][2]}}</h1>
+		<p>{{user[0][0]}}  {{user[0][1]}}</p>
+	</div>
+	<ul class="sidenav">
+		<li><a href="/profile"> <i class="fa fa-user"></i> Profile</a></li>
+		<li><a href="/history"> <i class="fa fa-calendar"></i> Recent QUIZ </a></li>
+		<li><a href="/quizzes" class="active"> <i class="fa fa-laptop"></i> Quiz </a></li>
+		<!-- <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li> -->
+		<li><a href="/logout"> <i class="fa fa-edit"></i> Log out</a></li>
+	</ul>
+</div>		
+<div class="right">
+	<div class="heading">
+		Current quiz
+	</div>
+	<form method ="POST" action="">
+		{%for quiz in quizzes%}
+		<div class="quiz_list">
+			{{quiz[0]}}   {{quiz[1]}}
+			<button type="submit" name="submit" value="{{quiz[0]}}" class="btn">Start</button>
+		</div>
+		{%endfor%}	           
+	</form>
+</div>
+
+</body>
+</html>

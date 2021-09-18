@@ -1,0 +1,83 @@
+<! doctype html>
+<html>
+<head>
+<title>
+	QUIZ
+</title>
+<link rel="stylesheet" href="../static/stylesheets/signup.css">
+</head>
+<script>
+function validateForm() 
+{
+  var q = document.forms["user_detail"]["fname"].value;
+  var a = document.forms["user_detail"]["lname"].value;
+  var c = document.forms["user_detail"]["user"].value;
+  var d = document.forms["user_detail"]["dob"].value;
+  var e = document.forms["user_detail"]["about"].value;
+  var f = document.forms["user_detail"]["mygender"].value;
+  var g = document.forms["user_detail"]["pass"].value;
+  var i = document.forms["user_detail"]["occupation"].value;
+  var j = document.forms["user_detail"]["country"].value;
+  if (q==""||a==""||b==""||c==""||d==""||e==""||f==""||g==""||i==""||j=="") 
+  {
+    alert("ALL FIELD must be filled out");
+    return false;
+  }
+  
+} 
+</script>
+
+<body >
+{% with messages = get_flashed_messages() %}  
+    {% if messages %}  
+        {% for message in messages %}  
+            <script type ="text/javascript">
+             alert('{{ message }}');
+			</script> 
+        {% endfor %}  
+    {% endif %}  
+{% endwith %}
+<div class="content">
+	QUIZ<br>
+</div>
+<div class="signup">
+	<h2 >SIGN UP FORM</h2>
+	<div class="fillups">
+		<form name="user_detail" method ="POST" onsubmit="return validateForm()" >
+			<div class="bio-row">
+				<p><span>First Name : </span><input type="text" name="fname" size="30" value=""/></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Last Name : </span><input type="text" name="lname" size="30" value=""/></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Username :</span> <input type="text" name="user" size="30" value=""/></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Date of Birth :</span> <input type="date" name="dob" value=""/></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Country :</span> <input type="text" name="country" size="30" value=""/></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Occupation :</span> <input type="text" name="occupation" size="30" value=""/></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Male :</span><input type ="radio" name="mygender" /></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Female :</span> <input type ="radio" name="mygender" /></p>
+			</div>
+			<div class="bio-row">
+				<p><span>About yourself :</span> <textarea type="text" name="about" rows="1" cols="30"></textarea></p>
+			</div>
+			<div class="bio-row">
+				<p><span>Password :</span><input type ="password" name="pass" size="30" value=""/></p>
+			</div>
+			<button type="submit" name="submit">Create account</button> <button type="reset" name="reset now">Reset</button>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>

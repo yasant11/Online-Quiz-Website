@@ -1,0 +1,46 @@
+<! doctype html>
+<html>
+
+<head>
+<title>
+	QUIZ
+</title>
+<link rel="stylesheet" href="../static/stylesheets/admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="profile-nav">
+	<div class="user round">
+		<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+		<h1>{{admin_user}}</h1>
+		<p>{{admin_name}}</p>
+	</div>
+	<ul class="sidenav">
+		<li><a href="/admin" class="active"> <i class="fa fa-user"></i> Dashboard</a></li>
+		<li><a href="/active_users"> <i class="fa fa-trash"></i> Remove QUIZ </a></li>
+		<!-- <li><a href="users.html"> <i class="fa fa-calendar"></i> User Details </a></li> -->
+		<li><a href="/upload"> <i class="fa fa-upload"></i> Upload Quiz </a></li>
+		<li><a href="/logout"> <i class="fa fa-edit"></i> Log out</a></li>
+	</ul>
+</div>
+
+<div class="right">
+	<div class="heading">
+		"Success is never final. Failure is never fatal. It’s courage that counts."
+	</div>
+	<div class="content bigbox">
+		<div class="box">
+			TOTAL USER <br><span>{{tot_user[0][0]}}</span>
+		</div>
+		<div class="box">
+			ONLINE USER <br><span>{{au[0][0]}}</span>
+		</div>
+		<div class="box">
+			TOTAL QUIZ <br><span>{{tot_quiz[0][0]}}</span>
+		</div>
+	</div>		  
+</div>
+
+</body>
+</html>
