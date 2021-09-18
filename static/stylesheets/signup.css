@@ -1,0 +1,62 @@
+body{
+    background-image:url("../q.jpg");
+	 background-size: 1600px 780px;
+}
+.info{
+padding:100px;
+margin-top:20px;
+float:left;
+display:block;
+}
+
+.info h1{font-size:70;}
+
+.signup{
+color:white;
+margin-top:20px;
+padding:15px;
+background:black;
+opacity:70%;
+}
+
+.content{
+	text-align:center;
+	padding: 20px;
+	position:top;
+	font-size:40px;
+	background:#f1f2f7;
+	opacity:80%;	
+}
+
+.signup h2{
+	text-align:center;
+}
+
+
+button{
+	border:none;
+	margin-top :50px;
+	padding:8px;
+	border-radius:15px;
+	display: inline;
+	width:100px;
+	background:#f1f2f7;
+	border: 1px solid black;
+}
+button:hover{
+	background:gray;
+}
+
+.bio-row {
+    width: 50%;
+    float: left;
+	font-size:14px;
+    margin-bottom: 10px;
+
+}
+
+.bio-row p span {
+    width: 200px;
+	margin-right:50px;
+	font-size:18px;
+}
